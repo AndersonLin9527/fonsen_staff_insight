@@ -1,0 +1,37 @@
+[
+    {
+        "code": "F00001",
+        "role": "boss",
+        "name": "李佳鴻",
+        "english_name": "Jerry Lee",
+        "password_raw": "0230"
+    },
+    {
+        "code": "F00002",
+        "role": "boss",
+        "name": "杜經理",
+        "english_name": "Brian Tu",
+        "password_raw": "0230"
+    },
+    {
+        "code": "F00007",
+        "role": "supervisor",
+        "name": "陳冠融",
+        "english_name": "Haozen Chen",
+        "password_raw": "0230"
+    },
+    {
+        "code": "F00099",
+        "role": "employee",
+        "name": "徐思博",
+        "english_name": "Casper Hsu",
+        "password_raw": "1225"
+    },
+    {
+        "code": "F00132",
+        "role": "administrator",
+        "name": "林献杰",
+        "english_name": "Anderson Lin",
+        "password_raw": "1226"
+    }
+]
