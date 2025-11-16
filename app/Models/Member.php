@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 
 /**
  * Class Member
+ * @mixin EloquentBuilder
  * @property int $id
  * @property string $role 員工角色
  * @property string $code 員工編號
