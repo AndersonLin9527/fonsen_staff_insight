@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -18,8 +19,8 @@ return new class extends Migration {
             $table->enum('role', ['administrator', 'boss', 'supervisor', 'employee'])->default('employee')->comment('員工角色');
             $table->string('code', 20)->unique()->comment('員工編號');
             $table->string('password')->comment('員工密碼');
-            $table->string('name', 50)->nullable()->comment('真實姓名');
-            $table->string('english_name', 50)->nullable()->comment('英文名稱');
+            $table->string('name', 50)->comment('真實姓名');
+            $table->string('english_name', 50)->comment('英文名稱');
             $table->rememberToken();
             $table->timestamps();
         });
