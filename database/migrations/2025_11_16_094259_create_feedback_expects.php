@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -30,13 +31,12 @@ return new class extends Migration {
             // 第一大題
             // 1-1 對公司/部門的期待
             $table->text('expect_company')->default('')->comment('1-1 對公司/部門的期待');
-            // 1-2 你對未來重構計畫負責人(Anderson)有什麼期待
+            // 1-2 對領導者的期待
             $table->text('expect_leader')->default('')->comment('1-2 對領導者的期待');
-            // 1-3 推舉的下一任計畫負責人(不關聯)
-            $table->string('expect_next_leader', 100)->comment('1-3 推舉的下一任計畫負責人');
-            // 1-3 為什麼
+            // 1-3 推舉下一任領導者
+            $table->string('expect_next_leader', 100)->comment('1-3 推舉下一任領導者');
+            // 1-3 推舉原因
             $table->text('expect_next_leader_reason')->default('')->comment('1-3 推舉原因');
-
             $table->timestamps();
 
             // 一個活動中，一個員工只能有一份 feedback
