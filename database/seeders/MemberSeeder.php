@@ -18,7 +18,8 @@ class MemberSeeder extends Seeder
     public function run(): void
     {
         // 讀取 JSON
-        $path = database_path('seeders/files/members.json');
+//        $path = database_path('seeders/files/members.json');
+        $path = database_path('seeders/files/members_25-11-18.json');
 
         if (!File::exists($path)) {
             $this->command->error("members.json not found: $path");

@@ -1,0 +1,135 @@
+[
+    {
+        "code": "F00001",
+        "role": "boss",
+        "name": "李佳鴻",
+        "english_name": "Jerry Lee",
+        "password_raw": "0230",
+        "star_sign": ""
+    },
+    {
+        "code": "F00002",
+        "role": "boss",
+        "name": "杜經理",
+        "english_name": "Brian Tu",
+        "password_raw": "0230",
+        "star_sign": ""
+    },
+    {
+        "code": "F00004",
+        "role": "employee",
+        "name": "江麟哲",
+        "english_name": "Jack",
+        "onboard_date": "2011-04-11",
+        "password_raw": "1228",
+        "star_sign": "摩羯座"
+    },
+    {
+        "code": "F00005",
+        "role": "supervisor",
+        "name": "莊士勛",
+        "english_name": "Ashin",
+        "onboard_date": "2011-09-14",
+        "password_raw": "0904",
+        "star_sign": "處女座"
+    },
+    {
+        "code": "F00042",
+        "role": "supervisor",
+        "name": "陳冠融",
+        "english_name": "Haozen",
+        "onboard_date": "2020-05-18",
+        "password_raw": "0318",
+        "star_sign": "雙魚座"
+    },
+    {
+        "code": "F00056",
+        "role": "employee",
+        "name": "楊紹障",
+        "english_name": "Andy",
+        "onboard_date": "2021-09-13",
+        "password_raw": "0527",
+        "star_sign": "雙子座"
+    },
+    {
+        "code": "F00069",
+        "role": "employee",
+        "name": "曹偉倫",
+        "english_name": "Eric",
+        "onboard_date": "2022-07-04",
+        "password_raw": "0528",
+        "star_sign": "雙子座"
+    },
+    {
+        "code": "F00080",
+        "role": "employee",
+        "name": "周聖祐",
+        "english_name": "Zack",
+        "onboard_date": "2023-12-19",
+        "password_raw": "1001",
+        "star_sign": "天秤座"
+    },
+    {
+        "code": "F00116",
+        "role": "employee",
+        "name": "謝長宏",
+        "english_name": "Hong",
+        "onboard_date": "2024-12-16",
+        "password_raw": "0204",
+        "star_sign": "水瓶座"
+    },
+    {
+        "code": "F00118",
+        "role": "employee",
+        "name": "劉佩綺",
+        "english_name": "Archie",
+        "onboard_date": "2025-02-10",
+        "password_raw": "0131",
+        "star_sign": "水瓶座"
+    },
+    {
+        "code": "F00122",
+        "role": "employee",
+        "name": "徐浩翔",
+        "english_name": "Casper",
+        "onboard_date": "2025-06-02",
+        "password_raw": "1224",
+        "star_sign": "摩羯座"
+    },
+    {
+        "code": "F00130",
+        "role": "employee",
+        "name": "邱煥霖",
+        "english_name": "Roy",
+        "onboard_date": "2025-08-18",
+        "password_raw": "0525",
+        "star_sign": "雙子座"
+    },
+    {
+        "code": "F00132",
+        "role": "administrator",
+        "name": "林献杰",
+        "english_name": "Anderson",
+        "onboard_date": "2025-09-01",
+        "password_raw": "1226",
+        "star_sign": "摩羯座"
+    },
+    {
+        "code": "F00133",
+        "role": "employee",
+        "name": "施宗廷",
+        "english_name": "Allen",
+        "onboard_date": "2025-09-01",
+        "password_raw": "0817",
+        "star_sign": "獅子座"
+    },
+    {
+        "code": "F00138",
+        "role": "employee",
+        "name": "黃定綱",
+        "english_name": "Felix",
+        "onboard_date": "2025-10-13",
+        "password_raw": "0721",
+        "star_sign": "巨蟹座"
+    }
+]
