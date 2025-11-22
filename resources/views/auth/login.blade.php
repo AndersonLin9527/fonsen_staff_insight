@@ -1,4 +1,15 @@
 <!doctype html>
+<?php
+
+use Illuminate\Support\ViewErrorBag;
+
+/**
+ * @var ViewErrorBag $errors
+ * Variables from Controller
+ * @see App\Http\Controllers\Auth\LoginController::loginPage()
+ * @var string $rememberMemberCode
+ */
+?>
 <html lang="zh-Hant">
 <head>
     <meta charset="utf-8">
@@ -10,8 +21,10 @@
 </head>
 <body class="bg-light">
 
-<div class="container py-5">
-    <div class="row justify-content-center">
+{{-- ⭐ 這裡使用 Flex 讓整個畫面垂直＋水平置中 --}}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <div class="row justify-content-center w-100">
         <div class="col-md-5">
 
             <div class="text-center mb-4">
@@ -23,15 +36,27 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('frontend.login') }}">
                         @csrf
+
                         <div class="mb-3">
                             <label for="code" class="form-label">員工編號</label>
+{{--                            <input--}}
+{{--                                autocomplete="off"--}}
+{{--                                type="text"--}}
+{{--                                name="code"--}}
+{{--                                id="code"--}}
+{{--                                class="form-control @error('code') is-invalid @enderror"--}}
+{{--                                value="{{ old('code') }}"--}}
+{{--                                placeholder="例如：F00132"--}}
+{{--                                required--}}
+{{--                                autofocus--}}
+{{--                            >--}}
                             <input
                                 autocomplete="off"
                                 type="text"
                                 name="code"
                                 id="code"
                                 class="form-control @error('code') is-invalid @enderror"
-                                value="{{ old('code') }}"
+                                value="{{ old('code', $rememberMemberCode) }}"
                                 placeholder="例如：F00132"
                                 required
                                 autofocus
@@ -58,13 +83,15 @@
                                 id="remember"
                                 name="remember"
                                 value="1"
+                                @if(!empty($rememberMemberCode)) checked @endif
                             >
-                            <label class="form-check-label" for="remember">記住我 (這台裝置)</label>
+                            <label class="form-check-label" for="remember">記住我 ( 這台裝置 )</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100">
                             登入
                         </button>
+
                         {{-- 錯誤訊息 --}}
                         @if ($errors->any())
                             <div class="alert alert-danger my-0 mt-3">
@@ -73,6 +100,7 @@
                                 @endforeach
                             </div>
                         @endif
+
                     </form>
                 </div>
 
@@ -83,6 +111,7 @@
 
         </div>
     </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

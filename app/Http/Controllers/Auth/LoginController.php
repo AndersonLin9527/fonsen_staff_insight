@@ -8,12 +8,16 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
 /**
  * Class LoginController
  */
 class LoginController extends Controller
 {
+    protected string $rememberMemberCode = 'rememberMemberCode';
+
+
     /**
      * 登入頁
      * @return Factory|View
@@ -21,7 +25,11 @@ class LoginController extends Controller
      */
     public function loginPage()
     {
-        return view('auth.login');
+        // 從 Cookie 把上次勾選「記住我」的員工編號帶回來
+        $data = [
+            'rememberMemberCode' => request()->cookie($this->rememberMemberCode),
+        ];
+        return view('auth.login', $data);
     }
 
     /**
@@ -39,14 +47,23 @@ class LoginController extends Controller
         // 使用 code + password 嘗試登入（使用預設 web guard）
         $remember = $request->boolean('remember');
 
-        if (Auth::attempt([
-            'code'     => $credentials['code'],
+        $authResult = Auth::attempt([
+            'code' => $credentials['code'],
             'password' => $credentials['password'],
-        ], $remember)) {
-            $request->session()->regenerate();
+        ], $remember);
 
-            // 之後可以改成 redirect()->route('feedback.form');
-            return redirect()->intended('/');
+        if ($authResult) {
+            $request->session()->regenerate();
+            // -----------------------------
+            // 記住員工編號到本機 Cookie
+            // -----------------------------
+            if ($remember) {
+                // 43200 分鐘 = 30 天
+                Cookie::queue($this->rememberMemberCode, $credentials['code'], 43200);
+            } else {
+                Cookie::queue(Cookie::forget($this->rememberMemberCode));
+            }
+            return redirect()->intended(route('frontend.home'));
         }
 
         // 登入失敗
